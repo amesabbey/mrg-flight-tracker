@@ -1,0 +1,150 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+// MRG color: #34762F
+// Triadic color: #2f3476
+// Triadic color: #2f7671
+
+/* For use in src/lib/core/theming/_palette.scss */
+$mrg-palette: (
+    50 : #e7efe6,
+    100 : #c2d6c1,
+    200 : #9abb97,
+    300 : #719f6d,
+    400 : #528b4e,
+    500 : #34762f,
+    600 : #2f6e2a,
+    700 : #276323,
+    800 : #21591d,
+    900 : #154612,
+    A100 : #87ff81,
+    A200 : #56ff4e,
+    A400 : #25ff1b,
+    A700 : #0dff02,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$triadic-blue-palette: (
+    50 : #e6e7ef,
+    100 : #c1c2d6,
+    200 : #979abb,
+    300 : #6d719f,
+    400 : #4e528b,
+    500 : #2f3476,
+    600 : #2a2f6e,
+    700 : #232763,
+    800 : #1d2159,
+    900 : #121546,
+    A100 : #8187ff,
+    A200 : #4e56ff,
+    A400 : #1b25ff,
+    A700 : #020dff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$triadic-teal-palette: (
+    50 : #e6efee,
+    100 : #c1d6d4,
+    200 : #97bbb8,
+    300 : #6d9f9c,
+    400 : #4e8b86,
+    500 : #2f7671,
+    600 : #2a6e69,
+    700 : #23635e,
+    800 : #1d5954,
+    900 : #124642,
+    A100 : #81fff4,
+    A200 : #4efff0,
+    A400 : #1bffeb,
+    A700 : #02ffe9,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+$mrg-flight-tracker-app-primary: mat.define-palette($mrg-palette);
+$mrg-flight-tracker-app-accent: mat.define-palette($triadic-teal-palette);
+
+
+
+// The warn palette is optional (defaults to red).
+$mrg-flight-tracker-app-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$mrg-flight-tracker-app-theme: mat.define-light-theme((
+  color: (
+    primary: $mrg-flight-tracker-app-primary,
+    accent: $mrg-flight-tracker-app-accent,
+    warn: $mrg-flight-tracker-app-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($mrg-flight-tracker-app-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Lato", sans-serif; }
