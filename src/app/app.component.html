@@ -45,7 +45,8 @@
   img {
     background-color: var(--mrg);
     padding: 1rem;
-    max-width: 20rem;
+    width: 100%;
+    max-width: 400px;
   }
 
   p {
@@ -174,6 +175,7 @@
     <div class="left-side">
       <img src="assets\monster-logo-white-2024.png" alt="Monster Logo"/> 
       <h1>{{ title }}</h1>
+      <router-outlet />
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
@@ -280,9 +282,6 @@
           </svg>
         </a>
       </div>
-    </div>
-    <div class="body">
-      <router-outlet />
     </div>
   </div>
 </main>
