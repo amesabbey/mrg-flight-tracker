@@ -32,14 +32,8 @@ export class NavbarComponent {
   
   loginWithGoogle() {
     signInWithPopup(this.auth, new GoogleAuthProvider())
-    .then((value) => {
-      console.log(value);
-      this.activeUser = true;
-    })
-    .catch((error) => {
-      console.log(error);
-      this.displayError(error);
-    });
+    .then(() => this.activeUser = true)
+    .catch((error) => this.displayError(error));
   }
 
   logout() {
