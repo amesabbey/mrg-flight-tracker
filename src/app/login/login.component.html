@@ -3,4 +3,13 @@
     class="login-buttons" 
     color="accent" 
     (click)="loginWithGoogle()"
+    #loginButton
 >Login</button>
+
+<button 
+    mat-stroked-button 
+    class="login-buttons" 
+    color="accent" 
+    (click)="logout()"
+    *ngIf="activeUser"
+>Logout</button>
