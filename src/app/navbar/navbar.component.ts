@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { FlightSubmissionComponent } from '../flight-submission/flight-submission.component';
 import { FlightListComponent } from "../flight-list/flight-list.component";
+import { FirebaseError } from '@angular/fire/app';
 
 @Component({
   selector: 'app-navbar',
@@ -33,7 +34,11 @@ export class NavbarComponent {
   loginWithGoogle() {
     signInWithPopup(this.auth, new GoogleAuthProvider())
     .then(() => this.activeUser = true)
-    .catch((error) => this.displayError(error));
+    .catch((error: FirebaseError) => {
+      if (error.message != "Firebase: Error (auth/popup-closed-by-user).") {
+        this.displayError(error);
+      }
+    });
   }
 
   logout() {
