@@ -1,0 +1,44 @@
+<button 
+    mat-stroked-button 
+    class="login-button" 
+    color="accent" 
+    (click)="loginWithGoogle()"
+    *ngIf="!activeUser"
+>Login</button>
+
+<div *ngIf="activeUser">
+
+    <div class="button-row">
+
+        <button 
+            mat-stroked-button 
+            class="navbar-button" 
+            color="primary" 
+            (click)="openAddFlightDialog()"
+        >Add Flight</button>
+    
+        <button 
+            mat-stroked-button 
+            class="navbar-button" 
+            color="accent" 
+            (click)="refresh = !refresh"
+        >Refresh</button>
+    
+        <button 
+            mat-stroked-button 
+            class="navbar-button" 
+            (click)="logout()"
+        >Logout</button>
+    
+    </div>
+
+    <div class="divider" role="separator" aria-label="Divider"></div>
+    
+    <div class="flight-grid">
+    
+        <app-flight-list [reload]="refresh"></app-flight-list>
+        
+    </div>
+    
+
+</div>

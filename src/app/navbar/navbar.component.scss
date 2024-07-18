@@ -1,0 +1,59 @@
+.login-button {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    width: 100%;
+    max-width: 30rem;
+    margin-top: 1.5rem;
+}
+
+.button-row {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.navbar-button {
+    // display: flex;
+    align-items: center;
+    --pill-accent: var(--mrg);
+    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+    color: var(--pill-accent);
+    padding-inline: 0.75rem;
+    padding-block: 0.375rem;
+    border-radius: 2.75rem;
+    border: 0;
+    transition: background 0.3s ease;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.navbar-button:hover {
+    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+}
+
+.button-row .navbar-button:nth-child(6n + 1) {
+  --pill-accent: var(--mrg);
+}
+.button-row .navbar-button:nth-child(6n + 2) {
+  --pill-accent: var(--triadic-teal);
+}
+.button-row .navbar-button:nth-child(6n + 3) {
+  --pill-accent: var(--triadic-blue);
+  color: var(--triadic-blue);
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background: var(--green-to-teal-to-blue-horizontal-gradient);
+    margin-block: 1.5rem;
+  }

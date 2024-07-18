@@ -155,7 +155,7 @@
     fill: var(--gray-900);
   }
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 750px) {
     .content {
       flex-direction: column;
       width: max-content;
@@ -175,7 +175,8 @@
     <div class="left-side">
       <img src="assets\monster-logo-white-2024.png" alt="Monster Logo"/> 
       <h1>{{ title }}</h1>
-      <router-outlet />
+      <app-splash *ngIf="splashActive"></app-splash>
+      <app-navbar></app-navbar>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
